@@ -19,15 +19,13 @@
 #ROUTECHANGETABLE(GP_AP34R_HVISUAL) 
 改变航路，需要搭配 route.ini 使用 
 ----------------------------------- 
- 
-4 
- 
 #STATE(TAXI_REQ_INIT_DEPARTURE) 
 可让飞机跳转到另一个管制参数（状态） 
 ----------------------------------- 
 #EXECUTE(GOAROUND) 
 执行复飞
 ```
+
 ```
 <TAXI_RUNWAY> 
 <TAXI_STAND_BY> 

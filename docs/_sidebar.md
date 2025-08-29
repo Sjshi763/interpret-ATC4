@@ -6,4 +6,4 @@
 - [模型](模型.md)
 - 示例
     - [State](示例/state.md)
-    - [Command](示例/state.md)
+    - [Command](示例/Command.md)
