@@ -1,4 +1,4 @@
-![](https://i.waifu.pics/89mbLcq.jpg)
+![](https://i.waifu.pics/4Ni15Gm.jpg)
 
 # 这个项目是ATC4的非官方文档
 
