@@ -15,4 +15,4 @@
     - 启动改档时
     - 启动后
 - 其他版本
-    - [3DS](./3DS/3DS-Airport-Haro-安装.md)
+    - [3DS](3DS/3DS-Airport-Haro-安装.md)
