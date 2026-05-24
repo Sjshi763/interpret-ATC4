@@ -7,7 +7,7 @@
   <meta name="description" content="Description">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
   <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify@4/lib/themes/vue.css">
-  <style type="text/css">	
+  <style type="text/css">
 	.markdown-section pre[data-lang] {
 		overflow: auto !important;
 	}
@@ -29,12 +29,35 @@
 <body>
   <div id="app"></div>
   <script>
+    // 初始化语言
+    var currentLang = localStorage.getItem('docsify-lang') || 'zh'; // 默认中文
+
+    // 语言切换函数
+    function changeLanguage(lang) {
+      currentLang = lang;
+      localStorage.setItem('docsify-lang', lang);
+      document.documentElement.lang = lang;
+      // 重新加载页面以应用新语言
+      window.location.reload();
+    }
+
+    // 更新语言选择器
+    function updateLanguageSelector() {
+      const selector = document.getElementById('language-selector');
+      if (selector) {
+        selector.value = currentLang;
+      }
+    }
+
     window.$docsify = {
       name: '',
       repo: '',
-      loadSidebar: true,
+      loadSidebar: currentLang === 'zh' ? '_sidebar.md' : '_sidebar.en.md',
       subMaxLevel: 3,
-      coverpage: true,
+      coverpage: currentLang === 'zh' ? '_coverpage.md' : '_coverpage.en.md',
+      // 注意：Docsify 本身不直接支持 'loadLanguages' 来加载 YML 语言包
+      // 我们这里通过切换 .en.md 和 .md 文件来实现内容的多语言
+      // 界面元素的翻译可以通过自定义 HTML 和 JS 来实现，或者寻找支持 i18n 的 Docsify 插件
       markdown: {
             renderer:{
 				code: function(code, lang) {
@@ -47,12 +70,19 @@
 	 },
 	 plugins: [
 		  function (hook, vm) {
+        hook.init(function() {
+          // 在初始化时设置语言
+          document.documentElement.lang = currentLang;
+          updateLanguageSelector();
+        });
+
 			  hook.doneEach(function (html) {                
+        // 每次路由完成后更新语言选择器和 Prism
 				Prism.highlightAll();
+        updateLanguageSelector();
 			  })
 		  }
 	  ]
-
     }
   </script>
   <!-- Docsify v4 -->
