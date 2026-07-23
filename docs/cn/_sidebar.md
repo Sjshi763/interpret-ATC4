@@ -5,6 +5,7 @@
 - [航路制作](/cn/航路制作.md)
 - [滑行和推出路线](/cn/滑行和推出路线.md)
 - [模型](/cn/模型.md)
+- [ATC双方声音](/cn/ATC双方声音.md)
 - 示例
     - [State](/cn/示例/state.md)
     - [Command](/cn/示例/Command.md)
