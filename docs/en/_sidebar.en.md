@@ -5,6 +5,7 @@
 - [Route Making](/en/航路制作.en.md)
 - [Taxi and Pushback Routes](/en/taxi-and-pushback-routes.en.md)
 - [Models](/en/模型.en.md)
+- [ATC Voices](/en/ATC-voices.en.md)
 - Examples
     - [State](/en/examples/state.en.md)
     - [Command](/en/examples/command.en.md)
